@@ -1,0 +1,30 @@
+.container {
+    max-width: 120rem;
+    margin: 0rem auto;
+    min-height: 100vh;
+    position: relative;
+
+    background-color: var(--color-primary);
+}
+
+.navbar {
+    min-height: 5rem;
+    background-color: var(--color-secondary);
+    color: var(--defaul-font-color);
+}
+
+.content {
+  color: var(--defaul-font-color);
+
+  h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 10rem 0;
+    font-size: 4rem;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}

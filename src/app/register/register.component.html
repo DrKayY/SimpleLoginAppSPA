@@ -1,0 +1,30 @@
+<div class="container">
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+        <h4 class="form__title">Register</h4>
+        <div class="form__group">
+            <label for="" class="form__label">name</label>
+            <input type="text" class="form__input" placeholder="username" formControlName="name">
+            <div class="form__error" *ngIf="registerForm.get('name').touched && registerForm.get('name').hasError('required')">username is required</div>
+        </div>
+        <div class="form__group">
+            <label for="" class="form__label">Password</label>
+            <input type="password" class="form__input" placeholder="Password" formControlName="password">
+            <div class="form__error" *ngIf="registerForm.get('password').touched && registerForm.get('password').hasError('required')">Password is required</div>
+            <div class="form__error" *ngIf="registerForm.get('password').touched && registerForm.get('password').hasError('minlength')">Password must have a minimum of 6 characters</div>
+        </div>
+        <div class="form__group">
+            <label for="" class="form__label">Confirm Password</label>
+            <input type="password" class="form__input" placeholder="Confirm Password" formControlName="confirmPassword">
+            <div class="form__error" *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword').touched">Passwords do not match</div>
+        </div>
+        <div class="form__group">
+            <label for="" class="form__checkbox form__checkbox-label">Are you Admin?</label>
+            <input type="checkbox" class="form__checkbox form__checkbox-input" formControlName="isAdmin">
+            <label for="" class="form__label">Admin Code</label>
+            <input type="text" class="form__input admin" placeholder="Admin Code" formControlName="adminCode">
+        </div>
+        <div class="form__group">
+            <button class="btn__success form__button" [disabled]="!registerForm.valid">Register</button>
+        </div>
+    </form>
+</div>

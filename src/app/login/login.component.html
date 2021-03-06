@@ -1,0 +1,17 @@
+<div class="container">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <h4 class="form__title">Login</h4>
+        <div class="form__group">
+            <label for="" class="form__label"></label>
+            <input type="text" class="form__input" placeholder="Username" formControlName="name" required>
+        </div>
+        <div class="form__group">
+            <label for="" class="form__label">Password</label>
+            <input type="password" class="form__input" placeholder="Password" formControlName="password" required>
+            <a href="#" class="form__link">Forgot Password?</a>
+        </div>
+        <div class="form__group">
+            <button class="btn__success form__button" [disabled]=!loginForm.valid>Login</button>
+        </div>
+    </form>
+</div>

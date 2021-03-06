@@ -1,0 +1,11 @@
+<nav class="navbar">
+    <div class="navbar__title">Login App</div>
+    <div class="navbar__links">
+        <ul class="nav-links">
+            <li class="nav-links__item"><a class="nav-links__link" routerLinkActive="router-link-active" [routerLink]="['/login']" *ngIf="!isLoggedIn">Login</a></li>
+            <li class="nav-links__item"><a class="nav-links__link" *ngIf="isLoggedIn" (click)="logout()">Logout</a></li>
+            <li class="nav-links__item"><a class="nav-links__link" routerLinkActive="router-link-active" [routerLink]="['/register']" *ngIf="!isLoggedIn">Register</a></li>
+            <li class="nav-links__item"><a class="nav-links__link" routerLinkActive="router-link-active" [routerLink]="['/']" *ngIf="user && user.role === 'admin'">Admin</a></li>
+        </ul>
+    </div>
+</nav>
